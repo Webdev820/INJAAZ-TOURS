@@ -69,20 +69,20 @@ export const Destinations = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20 bg-gradient-to-br from-amber-50 to-green-50">
+    <div className="min-h-screen py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-amber-50 to-green-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-green-800 mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-green-800 mb-4 sm:mb-6">
             {language === 'en' ? 'Destinations' : 'الوجهات'}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             {language === 'en' ? 'Explore the most beautiful destinations in Kenya, from African safaris to tropical beaches' : 'استكشف أجمل الوجهات في كينيا من السفاري الأفريقي إلى الشواطئ الاستوائية'}
           </p>
         </div>
 
         {/* Destinations Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {destinations.map((destination, index) => (
             <Link
               key={index}
@@ -93,26 +93,26 @@ export const Destinations = () => {
                 <img
                   src={destination.image}
                   alt={destination.name}
-                  className="w-full h-64 object-cover object-center"
+                  className="w-full h-48 sm:h-56 lg:h-64 object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                     {destination.name}
                   </h3>
-                  <p className="text-yellow-300 text-lg">
+                  <p className="text-yellow-300 text-base sm:text-lg">
                     {destination.description}
                   </p>
                 </div>
               </div>
               
-              <div className="p-8">
-                <p className="text-gray-600 mb-6 leading-relaxed">
+              <div className="p-6 sm:p-8">
+                <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                   {destination.detailedDescription}
                 </p>
                 
                 {/* Info Grid */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                   <div className="flex items-center text-sm text-gray-500">
                     <Clock className="h-4 w-4 ml-2 text-yellow-500" />
                     <span className="mr-2">{language === 'en' ? 'Duration:' : 'المدة:'}</span>
@@ -126,8 +126,8 @@ export const Destinations = () => {
                 </div>
                 
                 {/* Highlights */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-green-800 mb-3">{language === 'en' ? 'Highlights:' : 'أبرز المعالم:'}</h4>
+                <div className="mb-4 sm:mb-6">
+                  <h4 className="font-semibold text-green-800 mb-2 sm:mb-3 text-sm sm:text-base">{language === 'en' ? 'Highlights:' : 'أبرز المعالم:'}</h4>
                   <div className="space-y-2">
                     {destination.highlights.map((highlight, highlightIndex) => (
                       <div key={highlightIndex} className="flex items-center text-sm text-gray-600">
@@ -138,7 +138,7 @@ export const Destinations = () => {
                   </div>
                 </div>
                 
-                <div className="pt-4 border-t border-gray-200">
+                <div className="pt-3 sm:pt-4 border-t border-gray-200">
                   <span className="text-yellow-600 font-semibold group-hover:text-green-600 transition-colors">
                     {language === 'en' ? 'Discover More →' : 'اكتشف المزيد ←'}
                   </span>
@@ -149,23 +149,23 @@ export const Destinations = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-20 text-center bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-12 text-white">
-          <h2 className="text-3xl font-bold mb-4">
+        <div className="mt-12 sm:mt-16 lg:mt-20 text-center bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 sm:p-12 text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             {language === 'en' ? 'Ready for your next adventure?' : 'جاهز لمغامرتك القادمة؟'}
           </h2>
-          <p className="text-xl mb-8 text-green-100">
+          <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-green-100">
             {language === 'en' ? 'Let us help you plan your dream trip to Kenya' : 'دعنا نساعدك في التخطيط لرحلة أحلامك إلى كينيا'}
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <Link
               to="/request-quote"
-              className="bg-yellow-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-yellow-600 transition-colors"
+              className="bg-yellow-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-yellow-600 transition-colors"
             >
               {language === 'en' ? 'Request a Quote' : 'طلب عرض سعر'}
             </Link>
             <Link
               to="/tours"
-              className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-green-700 transition-all"
+              className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-white hover:text-green-700 transition-all"
             >
               {language === 'en' ? 'View Tours' : 'عرض الجولات'}
             </Link>
